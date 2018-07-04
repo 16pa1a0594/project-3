@@ -28,7 +28,7 @@ Welcome to your Vagrant-built virtual machine.
 Last login: Fri May 25 04:46:20 2018 from 10.0.2.2
 vagrant@precise64:~$ cd /vagrant
 vagrant@precise64:/vagrant$ ls
-login.py  newsdata.sql  pk.py  Vagrantfile
+login.py  newsdata.sql  log.py  Vagrantfile
 vagrant@precise64:/vagrant$ sudo -i -u vagrant
 vagrant@precise64:~$ ls
 postinstall.sh
