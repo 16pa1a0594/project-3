@@ -5,19 +5,20 @@ import psycopg2
 # Database queries
 # Database query 1: What are the three most popular articles of all time?
 request_articles = """select articles.title, count(*) as num
-                from log, articles
-                where log.status='200 OK'
-                and articles.slug = substr(log.path, 10)
+                 FROM articles
+                JOIN log
+                ON log.path LIKE concat('/article/%', articles.slug)
                 group by articles.title
                 order by num desc
                 limit 3;"""
 
 # Database query 2: Who are the most popular article authors of all time?
 request_authors = """select authors.name, count(*) as num
-                from articles, authors, log
-                where log.status='200 OK'
-                and authors.id = articles.author
-                and articles.slug = substr(log.path, 10)
+                FROM authors
+                JOIN articles
+                ON authors.id = articles.author
+                JOIN log
+                ON log.path like concat('/article/%', articles.slug)
                 group by authors.name
                 order by num desc;
                 """
