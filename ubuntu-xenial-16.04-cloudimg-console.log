@@ -229,7 +229,7 @@ vagrant@precise64:/vagrant$ python log.py
 results...
 
 
- top three articles based on views
+Top 3 articles of all time
 (1) "Candidate is jerk, alleges rival" with 338647 views
 (2) "Bears love berries, alleges bear" with 253801 views
 (3) "Bad things gone, say good people" with 170098 views
